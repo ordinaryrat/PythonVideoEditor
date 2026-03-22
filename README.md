@@ -115,6 +115,11 @@ NewLayer.trigger_effect_pairs.append(
     ),
 );
 
+Then just append the layer and start rendering the video:
+
+NewVideo.layers.append(NewLayer);
+NewVideo.renderVideo();
+
 Example code:
 from Video import Video, Layer
 
