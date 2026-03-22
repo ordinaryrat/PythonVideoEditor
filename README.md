@@ -32,7 +32,7 @@ You create a new video with Video()
 You then must define layers with Layer()  
   Parameters and default values:    
     name="layer", // Name of layer. Doesn't really do much    
-    color=(0,0,0,0), // Background color of this layer  
+    color=(0,0,0,0), // Background color of this layer (must include alpha)
     position=(0, 0), // where the layer is (NOT IMPLEMENTED)  
     alpha=255, // transparency of this layer (NOT IMPLEMENTED)  
     default_font_file="" // use this to load a text font if you are using text  
