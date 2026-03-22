@@ -6,6 +6,8 @@ You can put in custom functions for effects which allow for any operations relat
 
 I have very little experience with creating documentation and I am not expecting anyone to see this besides maybe a friend, apologies for brevity.  
 
+Also importantly, most audio features are lacking. You can only set the global audio for the entire video.
+
 requires modules:
 - cv2
 - numpy
