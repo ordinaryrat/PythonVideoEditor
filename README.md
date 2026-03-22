@@ -1,5 +1,5 @@
 Very basic python video editor.   
-Mainly built for experimentation and why not. Uses numpy.  
+Mainly built for experimentation and why not. Uses numpy, so doesn't take forever but still will take a decent amount of time (several minutes) to render even moderately complex videos at hd resolution for several hundred frames.   
 Allows for images, videos, text as well as custom frame rates/resolution.   
 You can have video editing effects as well like you can have motion/color change.   
 You can put in custom functions for effects which allow for any operations related to position/color/opacity.   
