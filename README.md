@@ -142,7 +142,7 @@ NewLayer.trigger_effect_pairs.append(
         "Always",   
         "Function",  
         "TerranEmblem",  
-        "from math import sin; Alpha_Factor = 0.2 + (abs(sin(frame_num/40))/6);"  
+        "from math import sin; AlphaFactor = 0.2 + (abs(sin(frame_num/40))/6);"  
     ),  
 );  
 NewLayer.trigger_effect_pairs.append(  
