@@ -17,7 +17,7 @@ from moviepy.editor import VideoFileClip, AudioFileClip
 # 8. Video | ✔️
 
 triggers = ["FrameNumber", "Always"];
-effects = ["Alpha_Factor", "DisplayImage", "GraduallyDisplayImage"];
+effects = ["AlphaFactor", "DisplayImage", "GraduallyDisplayImage"];
 
 class Layer:
     def __init__(self, name="layer", color=(0,0,0,0), position=(0, 0), alpha=255, default_font_file=""):
@@ -80,8 +80,8 @@ class Layer:
                     else:
                         image = self.images[rest[1]].copy();
                     
-                    if self.images_traits[rest[1]]["Alpha_Factor"] != 1:
-                        transparency = self.images_traits[rest[1]]["Alpha_Factor"]; 
+                    if self.images_traits[rest[1]]["AlphaFactor"] != 1:
+                        transparency = self.images_traits[rest[1]]["AlphaFactor"]; 
                         
                     if transparency != 1:
                         image[:, :, 3] *= transparency;
@@ -137,9 +137,9 @@ class Layer:
         image = imageio.imread(path);
         image = np.asarray(image).astype(dtype=np.float64);
         self.images[name] = image;
-        self.images_traits[name] = {"Alpha_Factor": 1, "ColorFactorR": 1, "ColorFactorG": 1, "ColorFactorB": 1, "PositionOffsetX": 0, "PositionOffsetY": 0};
+        self.images_traits[name] = {"AlphaFactor": 1, "ColorFactorR": 1, "ColorFactorG": 1, "ColorFactorB": 1, "PositionOffsetX": 0, "PositionOffsetY": 0};
     
-    def loadVideo(self, path, name=-1, preload=True):
+    def loadVideo(self, path, name=-1, preload=False):
         if name == -1:
             name = str(len(videos));
         
@@ -162,7 +162,7 @@ class Layer:
                         print(f"{(count * 100)/length:.02f}%");
             print(f"Done pre-loading video {path}");
         self.images[name] = video;
-        self.images_traits[name] = {"Alpha_Factor": 1, "ColorFactorR": 1, "ColorFactorG": 1, "ColorFactorB": 1, "PositionOffsetX": 0, "PositionOffsetY": 0, "InitialFrame": 0, "VideoPath": video_capture};
+        self.images_traits[name] = {"AlphaFactor": 1, "ColorFactorR": 1, "ColorFactorG": 1, "ColorFactorB": 1, "PositionOffsetX": 0, "PositionOffsetY": 0, "InitialFrame": 0, "VideoPath": video_capture};
     
     def loadText(self, name, text, font=-1, size=24, color=(0, 0, 0, 0), alloc=-1, alignment="left"):
         if font == -1:
@@ -177,7 +177,7 @@ class Layer:
         font = ImageFont.truetype(font, size);
         draw.text((0, 0), text, font = font, align = alignment, fill=color); 
         self.images[name] = np.array(image).astype(dtype=np.float64);
-        self.images_traits[name] = {"Alpha_Factor": 1, "ColorFactorR": 1, "ColorFactorG": 1, "ColorFactorB": 1, "PositionOffsetX": 0, "PositionOffsetY": 0};
+        self.images_traits[name] = {"AlphaFactor": 1, "ColorFactorR": 1, "ColorFactorG": 1, "ColorFactorB": 1, "PositionOffsetX": 0, "PositionOffsetY": 0};
 
 class Video:
     def __init__(self, name="TempVideo.avi", length=100, resolution=(1280, 720), frame_rate=30, audio_track=-1, codec="libx264"):
