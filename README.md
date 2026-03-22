@@ -4,7 +4,7 @@ Allows for images, videos, text as well as custom frame rates/resolution.
 You can have video editing effects as well like you can have motion/color change.   
 You can put in custom functions for effects which allow for any operations related to position/color/opacity.   
 
-I have very little experience with creating documentation and I am not expecting anyone to see this besides maybe a friend, apologies for brevity.  
+I have very little experience with creating documentation and I am not expecting anyone to see this besides maybe a friend, apologies for brevity. This is very limited in general for video production (due to no visibility/ui and slowness) with only specific use cases likely due to its custom resolution/frame rate and mathematical based animations.  
 
 Also importantly, most audio features are lacking. You can only set the global audio for the entire video.
 
@@ -22,12 +22,12 @@ from Video import Video, Layer
 
 You create a new video with Video()  
   Parameters and default values:  
-    name="TempVideo.avi", // Output video file name  
-    length=100, // Number of frames  
-    resolution=(1280, 720), // The size of the video  
-    frame_rate=30, // Frame rate  
-    audio_track=-1, // If you include an audio track, put the path to the audio here  
-    codec="libx264" // Codec. Honestly don't know what codecs are in detail but you can use libx265 for lower quality but smaller file size, libx264 is default.  
+    name="TempVideo.avi", // Output video file name
+    length=100, // This is number of FRAMES
+    resolution=(1280, 720), // The size of the video can be anything but not decimals or 0 (obviously) expect slowness at high resolutions though 
+    frame_rate=30, // Frame rate, can be most things (I think haven't extensively tested)
+    audio_track=-1, // If you include an audio track, put the path to the audio here
+    codec="libx264" // Codec. Honestly don't know what codecs are in detail but you can use libx265 for lower quality but smaller file size, libx264 is default.
 
 You then must define layers with Layer()  
   Parameters and default values:    
